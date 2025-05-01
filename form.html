@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-title {
+            color: #202124;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dadce0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #202124;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="radio"] {
+            width: 16px;
+            height: 16px;
+        }
+
+        .submit-btn {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .required::after {
+            content: " *";
+            color: #d93025;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Employee Information Form</h1>
+        <form>
+            <div class="form-group">
+                <label for="fullName" class="required">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactNumber" class="required">Contact Number</label>
+                <input type="tel" id="contactNumber" name="contactNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address" class="required">Address</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="companyName" class="required">Company Name</label>
+                <input type="text" id="companyName" name="companyName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="required">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department" class="required">Department</label>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="HR">HR</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Development">Development</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="required">Gender</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="male" name="gender" value="Male" required>
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="preferNotToSay" name="gender" value="Prefer not to say">
+                        <label for="preferNotToSay">Prefer not to say</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html> 
